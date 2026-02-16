@@ -1927,4 +1927,40 @@ textarea.form-input::-webkit-resizer { display: none; }
   max-height: 82vh;
   background: #111;
 }
+/* Desktop seulement : comportement normal */
+@media (min-width: 769px) and (pointer: fine) {
+  .project-item a[data-video] {
+    cursor: pointer;
+  }
+  .project-item a[data-video] .project-item-icon-box {
+    opacity: 1;
+    transition: opacity 0.2s;
+  }
+  .project-item a[data-video]:hover .project-item-icon-box {
+    opacity: 0.9;
+  }
+}
+
+/* Mobile / tablette / tactile → on désactive */
+@media (max-width: 768px), (pointer: coarse) {
+  .project-item a[data-video] {
+    pointer-events: none;          /* bloque le clic */
+    cursor: default;
+    text-decoration: none;
+  }
+
+  .project-item a[data-video] .project-item-icon-box {
+    display: none;                 /* cache l’œil = plus clair que c'est désactivé */
+  }
+
+  /* Option : petit texte explicatif sous chaque projet */
+  .project-item.disabled-on-mobile::after {
+    content: "Vidéo → ordinateur uniquement";
+    display: block;
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-top: 8px;
+    text-align: center;
+  }
+}
 }
