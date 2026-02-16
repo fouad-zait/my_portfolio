@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fouad Zait Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<!-- Ajoute ça juste avant </body> -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+  (function(){
+    emailjs.init({
+      publicKey: "vk32lvTdv2b5RJHxa",   // ← remplace par ta vraie clé
+    });
+  })();
+</script>
+<!-- MODAL VIDÉO UNIQUE -->
+<div class="video-modal" id="projectVideoModal">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  
+  <div class="modal-video-container">
+    <button class="modal-close-btn" aria-label="Fermer la vidéo">×</button>
+    
+    <video id="projectVideo" class="project-video" controls autoplay playsinline>
+      <source src="" type="video/mp4">
+      Votre navigateur ne supporte pas la lecture vidéo.
+    </video>
+    
+    <!-- Optionnel : loader pendant le chargement -->
+    <div class="video-loader">Chargement de la démo...</div>
+  </div>
+</div>
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Fouad ZAIT" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Fouad ZAIT">Fouad ZAIT</h1>
+
+          <p class="title">Data Scientist / AI Engineer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:fouadzait7@gmail.com" class="contact-link">fouadzait7@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+33784774131" class="contact-link">+33 784774131</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="2001-02-05">February 5, 2001</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Paris, France</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/fouad-zait/" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+        <li class="social-item">
+          <a href="https://github.com/fouad-zait" 
+            class="social-link" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </li>
+     
+      
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+       
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+AI Engineer and Data Scientist with three Master’s degrees in Artificial Intelligence, Data Science, and Data Engineering, and 2 years of professional experience.
+
+I have worked with major organizations such as Publicis Group, building machine learning models, AI agents, and Generative AI systems that turn complex data into actionable business insights. My expertise includes predictive modeling, NLP, LLM-based architectures, and RAG systems.
+
+I focus on designing scalable, production-ready AI solutions that deliver real business impact.
+          </p>
+
+          <p>
+My job is to build AI solutions and intelligent systems that are not only powerful and reliable but also easy to use and impactful.
+Moreover, I design AI agents and Generative AI systems that bring a personal touch to your business processes, making them smarter and more efficient.</p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/data_science_icon.png
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data Science</h4>
+
+                <p class="service-item-text">
+                  Data analysis & predictive modeling for business impact.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/ia_icon.png" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">AI & Machine Learning</h4>
+
+                <p class="service-item-text">
+                  Scalable machine learning & deep learning systems.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/agents_icon.png" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">AI Agents</h4>
+
+                <p class="service-item-text">
+Autonomous AI agents & Generative AI systems.                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/cloud_icon.png" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Cloud & Deployment</h4>
+
+                <p class="service-item-text">
+Cloud-native AI deployment & data pipelines.                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials-title">Testimonials</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/willeme.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Willeme Verdeaux </h4>
+                <h6 class="h6 testimonials-item-title" data-testimonials-title>Data science Expert</h6>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+I had the opportunity to work with Fouad and I highly recommend him.
+He is committed, autonomous, and reliable: he quickly understands requirements, follows through on tasks, and knows how to step back and see the bigger picture when needed.
+
+On a personal level, he is a pleasure to collaborate with: he integrates easily into a team and communicates his progress clearly.
+
+From a technical standpoint, Fouad has a strong background in data science (ML, clustering, LLMs…) and has developed solid expertise in GenAI (LangChain, LangGraph, agents). He quickly adapts to new environments and is proficient in deploying applications (Docker, cloud, VMs).
+
+A great asset with strong potential for any data or AI team!                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/baptiste.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Baptiste Casanova </h4>
+                <h6 class="h6 testimonials-item-title" data-testimonials-title>COO / CIO </h6>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+Thanks to Fouad for proposing effective solutions to complex problems with almost complete autonomy."                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/damien.png" alt="Damien Garrouste" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Damien Garrouste</h4>
+                <h6 class="h6 testimonials-item-title" data-testimonials-title>Senior Data Science Manager</h6>
+</h6>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+Fouad was part of my team (Next by Epsilon lab) in 2025 as an AI Engineer. During this time, he made a significant contribution to our work on agentic systems. Together, we developed an agent designed to assist with the execution of CRM campaigns, which was awarded by Google Cloud at the Agentic EMEA Challenge in Spring 2025.
+
+I am very satisfied with his work and highly recommend him: he has a strong team spirit, excellent listening skills, and demonstrates autonomy in his technical tasks in data science and AI engineering.
+
+Please feel free to contact me if you would like to discuss his work further.                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/benoit.png" alt="Henry william" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>N Benoit Ndiaye</h4>
+                <h6 class="h6 testimonials-item-title" data-testimonials-title>Data Science Manager | Expert Consultant</h6>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+Fouad was the main contributor to the Campaign Companion project, presented at the European-level hackathon organized by Google and won by Epsilon.
+
+I would like to highlight his commitment, autonomy, and efficiency. He sets no limits for himself and demonstrated a strong ability to design a complete AI solution requiring multidisciplinary expertise. This project was part of the development of a cloud-native solution integrating an agentic AI dimension.
+
+I highly recommend Fouad for any opportunity where his skills, initiative, and ability to tackle complex technical challenges can be fully leveraged.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <!--
+          - clients
+        -->
+
+        <section class="clients">
+
+          <h3 class="h3 clients-title">Clients</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/google_cloud.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/publicis_group.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/epsilon_logo.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/heyme_logo.png" alt="client logo">
+              </a>
+            </li>
+
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                Master's degree (M2) Data Science</h4>
+
+              <span>2024 — 2025</span>
+
+              <p class="timeline-text">
+                Paris-Est Créteil University (UPEC)
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Master's degree (M2) Data Engineer</h4>
+
+              <span>2023 — 2024</span>
+
+              <p class="timeline-text">
+                 Digital school of paris
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Master's degree (M2) in Intelligent Computer Systems</h4>
+
+              <span>2021 — 2023</span>
+
+              <p class="timeline-text">
+               University of Science and Technology
+              </p>
+
+            </li>
+             <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Bachelor's degree in Mathematics and Computer Science</h4>
+
+              <span>2018 — 2021</span>
+
+              <p class="timeline-text">
+               University of Science and Technology
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Data scientist / AI Engineer</h4>
+
+              <span>From January to August 2025 , Publicis Groupe- Epsilon France</span>
+
+              <p class="timeline-text">
+                Winner of the GCP "Agentic Era Hackathon 2025" for the EMEA
+region <br />
+End-to-end engineering of an agentic AI application with
+multiple specialized agents (business understanding, text-to-SQL
+generation, audience validation), capable of automatically
+generating targeted audiences for marketing campaigns.
+The solution integrates Google Cloud generative AI services, is
+exposed via FastAPI, deployed through a CI/CD pipeline, and
+includes testing and validation phases to ensure result reliability.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">AI Engineer</h4>
+
+              <span>From December 2023 to January 2025, HEYME</span>
+
+              <p class="timeline-text">
+Development and deployment of an intelligent chatbot based on
+an advanced RAG architecture, designed for customer support
+teams and end users.
+The system integrates optimization techniques (chunking,
+embeddings, vector databases, retriever and generation
+strategies) and relies on OpenAI’s generative AI services.
+It features a REST API-based user interface and a RAGas
+evaluation pipeline to ensure response reliability.              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Data Scientist</h4>
+
+              <span>From September to December 2023, HEYME</span>
+
+              <p class="timeline-text">
+                  Development of a predictive model for insurance contract
+cancellation, including data extraction and analysis, input
+preprocessing, model testing, and selection and optimization of
+the most suitable machine learning model.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">
+               Statistical methods, probability, and optimization <br /><br />
+RAG, Fine-tuning, Prompt Engineering, AI Agents
+Machine Learning, NLP, Deep Learning, Data Mining,
+Data Analysis, Data Engineering <br /><br />
+Python : LangChain, LangGraph, LlamaIndex, Scikit
+learn, PySpark, NumPy, Pandas, PyTorch, TensorFlow,
+Streamlit <br /><br />
+LLM / GenAI : OpenAI (GPT), Mistral, Gemini
+APIs : FastAPI, Flask <br /><br />
+DevOps / MLOps / LLMOps / CI/CD : Git, GitHub, Docker,
+Kubernetes, Azure DevOps, MLflow <br /><br />
+Cloud : Azure, Google Cloud Platform (GCP), AWS
+Databases : SQL (PostgreSQL, MySQL, BigQuery) ,
+NoSQL (MongoDB) , Vector databases (ChromaDB,
+FAISS, Milvus) , Elasticsearch <br /><br />
+Power BI
+                </h5>
+              </div>
+
+              
+
+            </li>
+
+
+          </ul>
+
+        </section>
+<br /><br />
+         <section class="skill">
+
+          <h3 class="h3 skills-title">Soft Skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">
+Autonomous , Creative , Strong interpersonal skills,
+Team-oriented mindset
+                </h5>
+              </div>
+
+              
+
+            </li>
+
+
+          </ul>
+
+        </section>
+<br /><br />
+       <section class="skill">
+
+          <h3 class="h3 skills-title">Hackathons & Competitions</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">
+🏆 Agentic Era Hackathon 2025 for EMEA Partners
+Winner
+                </h5>
+              </div>
+
+              
+
+            </li>
+
+
+          </ul>
+
+        </section>
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+          
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#" data-video="./assets/videos/campaign_companion.mp4">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+<img src="./assets/images/campaign_companion.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Marketing / CRM Automatisation </h3>
+
+                <p class="project-category">AI Agents</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#" data-video="./assets/videos/heyme.mp4">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+<img src="./assets/images/heyme1.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Insurance Customer Support Chatbot</h3>
+
+                <p class="project-category">Advanced RAG</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#" data-video="./assets/videos/8_puzzle.mp4">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+          <img src="./assets/images/8_puzzle_5.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">8 Puzzle Game</h3>
+
+                <p class="project-category">BFS / DFS / A* algorithms</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+  
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.75736262609!2d2.277517739550816!3d48.858889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sfr!2sfr!4v1647608789441!5m2!1sfr!2sfr"              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form  class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
