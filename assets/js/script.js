@@ -298,3 +298,74 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Détection fiable "mobile / tactile"
+  const isMobileOrTablet = 
+    window.matchMedia("(max-width: 768px)").matches ||
+    window.matchMedia("(pointer: coarse)").matches ||
+    'ontouchstart' in window;
+
+  if (isMobileOrTablet) {
+    console.log("Appareil tactile/mobile détecté → vidéos désactivées");
+
+    // On marque visuellement + on bloque les clics
+    document.querySelectorAll('.project-item a[data-video]').forEach(link => {
+      const parentItem = link.closest('.project-item');
+      if (parentItem) {
+        parentItem.classList.add('disabled-on-mobile');
+      }
+
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        // Pas d'alert systématique (agaçant) → juste silencieux ou message ponctuel
+        return false;
+      }, { once: true });  // on ne met qu'un seul listener
+    });
+
+    // Option : un seul message discret la première fois qu'on clique un projet
+    let messageShown = false;
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.project-item a[data-video]') && !messageShown) {
+        const msg = document.createElement('div');
+        msg.textContent = "Les démos vidéo sont visibles uniquement sur ordinateur";
+        msg.style.cssText = `
+          position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+          background: #222; color: #fff; padding: 12px 24px; border-radius: 8px;
+          z-index: 9999; font-size: 0.95rem; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        `;
+        document.body.appendChild(msg);
+        setTimeout(() => msg.remove(), 4500);
+        messageShown = true;
+      }
+    }, { passive: true });
+  }
+  else {
+    // ─── Code NORMAL d'ouverture du modal (seulement sur desktop) ───────
+    // Colle ici ton code existant qui ouvre le modal vidéo
+    // Exemple minimal :
+    const modal = document.getElementById('projectVideoModal');
+    const video = document.getElementById('projectVideo');
+    const source = video?.querySelector('source');
+
+    if (!modal || !video || !source) return;
+
+    document.querySelectorAll('.project-item a[data-video]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const url = a.getAttribute('data-video');
+        if (url) {
+          source.src = url;
+          video.load();
+          modal.classList.add('active');
+          video.play().catch(() => {});
+        }
+      });
+    });
+
+    // ... + le reste de ta logique de fermeture ...
+  }
+});
