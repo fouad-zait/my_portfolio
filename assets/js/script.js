@@ -211,6 +211,32 @@ for (let i = 0; i < formInputs.length; i++) {
 // MODAL VIDÉO POUR LES PROJETS – VERSION CORRIGÉE ET ROBUSTE
 // ────────────────────────────────────────────────
 
+// Détection mobile fiable (inclut in-app browsers iOS)
+const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  || window.matchMedia("(max-width: 1024px)").matches
+  || window.matchMedia("(pointer: coarse)").matches;
+
+if (isMobile) {
+  // Bloque les clics sur les projets vidéo
+  document.querySelectorAll('.project-item a[data-video]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Message discret (une seule fois)
+      if (!window.videoBlockedMessageShown) {
+        const msg = document.createElement('div');
+        msg.innerHTML = 'Les vidéos démo ne sont pas disponibles sur mobile.<br>Ouvre le site depuis un ordinateur pour les voir !';
+        msg.style.cssText = 'position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#333;color:white;padding:14px 24px;border-radius:12px;z-index:99999;font-size:15px;text-align:center;max-width:90%;box-shadow:0 4px 20px rgba(0,0,0,0.6);';
+        document.body.appendChild(msg);
+        setTimeout(() => msg.remove(), 6000);
+        window.videoBlockedMessageShown = true;
+      }
+
+      return false;
+    });
+  });
+} else {
 // On attend que le DOM soit complètement chargé pour éviter les erreurs "null"
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -368,4 +394,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ... + le reste de ta logique de fermeture ...
   }
-});
+});}
